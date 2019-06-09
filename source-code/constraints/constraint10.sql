@@ -13,8 +13,8 @@
 /*======== IMPLEMENTATION =========================================================================================================================================================================================================================*/
 
 go
-CREATE PROCEDURE usp_insertReg
---DROP PROCEDURE usp_insertReg
+CREATE PROCEDURE usp_insertOffr
+--DROP PROCEDURE usp_insertOffr
 (
 	@stud numeric(4),
 	@course varchar(6),
@@ -66,13 +66,13 @@ BEGIN
 	EXEC tSQLt.FakeTable 'dbo.offr';
 	insert into offr values('AM4DP', '2006-08-03', 'SCHD', 6, 1001, 'SAN FRANCISCO')
 
-	exec usp_insertReg @stud = 1029, @course = 'AM4DP', @starts = '2006-08-03', @eval = -1
-	exec usp_insertReg @stud = 1030, @course = 'AM4DP', @starts = '2006-08-03', @eval = -1
-	exec usp_insertReg @stud = 1031, @course = 'AM4DP', @starts = '2006-08-03', @eval = -1
-	exec usp_insertReg @stud = 1032, @course = 'AM4DP', @starts = '2006-08-03', @eval = -1
-	exec usp_insertReg @stud = 1033, @course = 'AM4DP', @starts = '2006-08-03', @eval = -1
-	exec usp_insertReg @stud = 1034, @course = 'AM4DP', @starts = '2006-08-03', @eval = -1
-	exec usp_insertReg @stud = 1035, @course = 'AM4DP', @starts = '2006-08-03', @eval = -1
+	exec usp_insertOffr @stud = 1029, @course = 'AM4DP', @starts = '2006-08-03', @eval = -1
+	exec usp_insertOffr @stud = 1030, @course = 'AM4DP', @starts = '2006-08-03', @eval = -1
+	exec usp_insertOffr @stud = 1031, @course = 'AM4DP', @starts = '2006-08-03', @eval = -1
+	exec usp_insertOffr @stud = 1032, @course = 'AM4DP', @starts = '2006-08-03', @eval = -1
+	exec usp_insertOffr @stud = 1033, @course = 'AM4DP', @starts = '2006-08-03', @eval = -1
+	exec usp_insertOffr @stud = 1034, @course = 'AM4DP', @starts = '2006-08-03', @eval = -1
+	exec usp_insertOffr @stud = 1035, @course = 'AM4DP', @starts = '2006-08-03', @eval = -1
 
     Declare @actual varchar(40)
 	set @actual = (select status from offr where course = 'AM4DP')
@@ -90,8 +90,8 @@ BEGIN
 	EXEC tSQLt.FakeTable 'dbo.reg';
 	EXEC tSQLt.FakeTable 'dbo.offr';
 	insert into offr values('AM4DP', '2005-04-03', 'SCHD', 6, 1001, 'SAN FRANCISCO')
-	exec usp_insertReg @stud = 1029, @course = 'AM4DP', @starts = '2006-08-03', @eval = -1
-	exec usp_insertReg @stud = 1030, @course = 'AM4DP', @starts = '2006-08-03', @eval = -1
+	exec usp_insertOffr @stud = 1029, @course = 'AM4DP', @starts = '2006-08-03', @eval = -1
+	exec usp_insertOffr @stud = 1030, @course = 'AM4DP', @starts = '2006-08-03', @eval = -1
 
     Declare @actual varchar(40)
 	set @actual = (select status from offr where course = 'AM4DP')
